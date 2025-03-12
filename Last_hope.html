@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Vandana</title>
+    <style>
+               * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #E6E6FA;
+            color: #4B0082;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+            margin-top: 20px;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        h1, h2 {
+            margin-bottom: 20px;
+            color: #6A5ACD;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+        
+        .btn {
+            background-color: #9370DB;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            background-color: #8A2BE2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .space1{
+            margin-left: 40px;
+        }
+        .pic1{
+            width: 330px;
+            height: 280px;
+            margin-left: 20px;
+        }
+        .popup{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .btn32{
+            margin-left: 120px;
+        }
+        .heart {
+            color: #6A5ACD;
+            font-size: 24px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Initial Popup -->
+    <div class="popup" id="greeting-popup">
+        <div class="popup-content">
+            <h1 class="space1">Hlwww Vandana!!</h1>
+            <p>I've made something special just for you ❤️</p>
+            <button class="btn btn32" onclick="closeGreeting()">Continue</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- How are you section -->
+        <div class="section" id="section-how-are-you">
+            <h2>How are you feeling today?</h2>
+            <button class="btn" onclick="feelingResponse('good')">Good</button>
+            <button class="btn" onclick="feelingResponse('very-good')">Very Good</button>
+            <button class="btn" onclick="feelingResponse('without-you')">Good without you</button>
+        </div>
+        
+        <!-- Phone number section -->
+        <div class="section" id="section-phone">
+            <h2>Call at this number:</h2>
+            <p style="font-size: 24px; font-weight: bold;">9399361193</p>
+            <button class="btn" onclick="showNextSection('section-haircut')">Continue</button>
+        </div>
+        
+        <!-- Haircut joke section -->
+        <div class="section" id="section-haircut">
+            <h2>Before & After My Haircut</h2>
+            <p>A glimpse into my future look! 😄</p>
+            <div class="image-container">
+                <!-- REPLACE THESE IMAGES: Upload your before haircut photo here -->
+                <img src="./pic/brfore.jpeg" class="pic1" alt="Before haircut">
+                <!-- REPLACE THESE IMAGES: Upload your after haircut or edited future look photo here -->
+                <img src="./pic/after.jpeg"  class="pic1" alt="After haircut (future me)">
+            </div>
+            <p>Who knew a haircut could change so much? The future me is looking sharp! 😎</p>
+            <button class="btn" onclick="showNextSection('section-memories')">See Our Memories</button>
+        </div>
+        
+        <!-- Memories slideshow section -->
+        <div class="section" id="section-memories">
+            <h2>Our Special Moments</h2>
+            <p>Swipe through our journey together</p>
+            <div class="slideshow">
+                <div class="slideshow-container" id="slideshow-container">
+                    <!-- Images will be added via JavaScript - see the memories array in the script section -->
+                </div>
+            </div>
+            <button class="btn" onclick="showNextSection('section-video')">Continue</button>
+        </div>
+        
+        <!-- Video section -->
+        <div class="section" id="section-video">
+            <h2>A Special Message</h2>
+            <div class="video-container">
+                <!-- REPLACE THIS VIDEO: Upload your personal video message here -->
+                <video width="100%" height="400px" controls>
+                    <source src="./pic/varun.mp4" type="video/mp4" >
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <button class="btn" onclick="showNextSection('section-story')">Continue</button>
+        </div>
+        
+        <!-- Story section -->
+        <div class="section" id="section-story">
+            <h2>Our Story</h2>
+            <!-- CUSTOMIZE THIS TEXT: Replace with your personal story -->
+            <p>From the moment we met, I knew there was something special about you. Your Voice in the game make my day, and your laugh is my favorite sound in the world .</p>
+            <p>Every moment spent with in Discord i just imagian that you are in front of me, and I love evey time i meet u anywhere in game, discord, video call, call, and all the memories we've created together.</p>
+            <p>The way you understand me, support me, and believe in me makes me feel like the luckiest person alive.</p>
+            <p>And u know how i feel about you but the last time when we talk and i ask u can i vist you u say no, i like it really got hurt and like u see i stop talking to u for that i am really sorry for that sorry </p>
+            <p>I'm grateful for every day I get to be a part of your life, and I look forward to creating many more beautiful memories with you.</p>
+            <button class="btn" onclick="showNextSection('section-questions')">Continue</button>
+        </div>
+        
+        <!-- Questions section -->
+        <div class="section" id="section-questions">
+            <h2>A Few Questions...</h2>
+            <p>Can we both be together in the future?</p>
+            <button class="btn" onclick="answerFuture('yes')">Yes, absolutely!</button>
+            <button class="btn" onclick="answerFuture('no')">Not sure yet</button>
+        </div>
+        
+        <!-- May visit section -->
+        <div class="section" id="section-may-visit">
+            <h2>Should I come visit you in 14 June or any date you say?</h2>
+            <button class="btn" onclick="answerMayVisit('yes')">Yes, please!</button>
+            <button class="btn" onclick="answerMayVisit('no')">Maybe later</button>
+        </div>
+        
+        <!-- Love question section -->
+        <div class="section" id="section-love">
+            <h2>Do you really love me?</h2>
+            <button class="btn" onclick="answerLove('yes')">Yes, I do!</button>
+            <button class="btn" onclick="answerLove('no')">Not telling...(aaj bol di yaar, <br>if jaara sa bhi haa toh)</button>
+        </div>
+        
+        <!-- Song section -->
+        <div class="section" id="section-song">
+            <h2>This song reminds me of you... ❤️</h2>
+            <div class="video-container">
+                <!-- Fixed YouTube embed with autoplay -->
+                 <video width="560" height="315"  controls >
+                    <source src="./pic/song.mp4"  type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p>Thank you for being you, Vandana. You mean the world to me.</p>
+            <p class="heart">❤️❤️❤️</p>
+        </div>
+        
+        <!-- Maybe later response -->
+        <div class="section" id="section-maybe-later">
+            <h2>That's okay!</h2>
+            <p>I understand. Whenever you're ready, I'll be here.</p>
+            <p class="heart">❤️</p>
+        </div>
+    </div>
+
+    <script>
+        // CUSTOMIZE THESE MEMORIES: Replace with your actual photos and dates
+        const memories = [
+            // Format: { date: "Month Year", src: "path-to-your-image.jpg" }
+            { date: "The first time you send me a photo of you.", src: "./pic/1.jpeg" },
+            { date: "Cutie", src: "./pic/2.jpeg" },
+            { date: "The best photo", src: "./pic/3.jpeg" },
+            { date: "Drawing", src: "./pic/4.jpeg" },
+            { date: "The last time u send me a photo of you.", src: "./pic/6.jpeg" },
+            { date: "Fuck YoU Hehehehhe", src: "./pic/5.jpeg" }
+            // Add more memories as needed
+        ];
+        
+        // Initialize the page
+        window.onload = function () {
+        // Load memories into slideshow
+          const slideshowContainer = document.getElementById('slideshow-container');
+          memories.forEach(memory => {
+           const imgElement = document.createElement('div');
+           imgElement.innerHTML = `
+          <img src="${memory.src}" alt="Memory from ${memory.date}" style="width: 300px; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+           <p style="text-align: center; margin-top: 5px;">${memory.date}</p>
+         `;
+       slideshowContainer.appendChild(imgElement);
+  });
+
+  // Start slideshow animation
+  startSlideshow();
+};
+
+        // Close greeting popup and show first section
+        function closeGreeting() {
+            document.getElementById('greeting-popup').style.display = 'none';
+            showNextSection('section-how-are-you');
+        }
+        
+        // Show next section
+        function showNextSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the requested section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Handle feeling response
+        function feelingResponse(feeling) {
+            if (feeling === 'without-you') {
+                showNextSection('section-phone');
+            } else {
+                showNextSection('section-haircut');
+            }
+        }
+        
+        // Handle future together question
+        function answerFuture(answer) {
+            if (answer === 'yes') {
+                showNextSection('section-may-visit');
+            } else {
+                showNextSection('section-maybe-later');
+            }
+        }
+        
+        // Handle May visit question
+        function answerMayVisit(answer) {
+            if (answer === 'yes') {
+                showNextSection('section-love');
+            } else {
+                showNextSection('section-maybe-later');
+            }
+        }
+        
+        // Handle love question
+        function answerLove(answer) {
+            if (answer === 'yes') {
+                showNextSection('section-song');
+                // Try to play YouTube video when this section is shown
+                const iframe = document.querySelector('#section-song iframe');
+                if (iframe) {
+                    // Ensure autoplay by refreshing the iframe src
+                    iframe.src = iframe.src;
+                }
+            } else {
+                showNextSection('section-maybe-later');
+            }
+        }
+        
+        // Slideshow animation
+        function startSlideshow() {
+            const container = document.getElementById('slideshow-container');
+            let position = 0;
+            
+            setInterval(() => {
+                position -= 1;
+                container.style.transform = `translateX(${position}px)`;
+                
+                // Reset when all images have scrolled
+                const containerWidth = container.scrollWidth;
+                const visibleWidth = document.querySelector('.slideshow').offsetWidth;
+                
+                if (Math.abs(position) > containerWidth - visibleWidth) {
+                    position = 0;
+                    container.style.transform = `translateX(${position}px)`;
+                }
+            }, 30); // Adjust speed here (higher number = slower)
+        }
+    </script>
+</body>
+</html>
